@@ -1,0 +1,11 @@
+[package]
+name = "anotai-storage"
+description = "SQLite persistence and Markdown export for AnotAI."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]

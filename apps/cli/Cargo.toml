@@ -1,0 +1,15 @@
+[package]
+name = "anotai-cli"
+description = "Command-line interface for AnotAI: record, transcribe and export without a UI."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "anotai"
+path = "src/main.rs"
+
+[dependencies]
