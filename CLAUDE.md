@@ -12,7 +12,14 @@ AnotAI é um app desktop **open source e local-first** para estudantes:
 
 Stack: Rust (Cargo workspace) + Tauri 2 + React/TypeScript. Dados locais em SQLite. O servidor Axum de sincronização é opcional e só entra na v0.4.
 
-O produto é Windows-first. Captura de áudio e app Tauri são desenvolvidos e testados no Windows nativo; os crates sem código de plataforma também compilam e testam no Linux (CI).
+O produto é Windows-first, mas o desenvolvimento segue um **modelo híbrido**:
+
+* **WSL2 (Ubuntu):** todo o código, testes, clippy e CI dos crates. É onde o Claude Code trabalha.
+* **Windows nativo (um segundo clone, só para validar):** o que depende de áudio real ou do app Tauri: captura WASAPI (B03), testes com áudio real (B05, B09), F01–F04 e R01.
+
+Regras do modelo híbrido:
+* Código específico de Windows fica atrás de `#[cfg(windows)]`. Todo crate compila e passa nos testes no Linux.
+* Quando um critério de aceite só puder ser verificado no Windows, não finja que validou: garanta que compila (`cargo check --target x86_64-pc-windows-msvc` quando possível, ou o job `windows-latest` do CI), escreva no comentário do card um roteiro exato de validação manual e marque o PR como **pendente de validação no Windows**.
 
 ## Fonte de verdade: o Jira
 

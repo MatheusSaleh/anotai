@@ -23,7 +23,9 @@ cargo test --workspace
 cd apps/desktop && pnpm install && pnpm tauri dev
 ```
 
-The desktop app must be developed on Windows, because audio capture uses WASAPI. The crates in `crates/` and the sync server also build on Linux and macOS, including WSL.
+The desktop app must be developed on Windows, because audio capture uses WASAPI. The crates in `crates/`, the `anotai` CLI and the sync server also build on Linux and macOS, including WSL.
+
+Crate layout: `crates/core` (`anotai-core`), `crates/audio` (`anotai-audio`), `crates/transcribe` (`anotai-transcribe`), `crates/session` (`anotai-session`), `crates/storage` (`anotai-storage`) and `apps/cli` (`anotai-cli`, binary `anotai`). See [Project structure](README.md#project-structure).
 
 ## Workflow
 
@@ -54,7 +56,7 @@ Checklist:
 - [ ] Code is formatted and passes clippy and the linters with no warnings
 - [ ] New behavior is covered by tests, and existing tests still pass
 - [ ] Public APIs and non-obvious decisions are documented
-- [ ] Rust types shared with the UI were regenerated (`cargo test -p core export_bindings`)
+- [ ] Rust types shared with the UI were regenerated (`cargo test -p anotai-core export_bindings`)
 - [ ] `CHANGELOG.md` has an entry under **Unreleased** for user-facing changes
 - [ ] The change follows the privacy rules below
 
