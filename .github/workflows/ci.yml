@@ -40,3 +40,10 @@ jobs:
 
       - name: Test
         run: cargo test --workspace
+
+      # `cargo test` regenerates the ts-rs bindings; any difference means they were not committed.
+      - name: Check TypeScript bindings are up to date
+        shell: bash
+        run: |
+          git add --intent-to-add apps/desktop/src/bindings
+          git diff --exit-code -- apps/desktop/src/bindings
