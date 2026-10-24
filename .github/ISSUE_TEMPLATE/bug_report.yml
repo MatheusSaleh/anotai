@@ -1,0 +1,55 @@
+name: Bug report
+description: Something does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please **do not** attach recordings or transcripts of real classes.
+        Security issues go to [Security Advisories](https://github.com/MatheusSaleh/anotai/security/advisories/new), not here.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start a session with ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: Include error messages or logs (they never contain audio or transcript text).
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: AnotAI version
+      placeholder: v0.1.0 or commit hash
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 23H2
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: CPU / GPU
+      placeholder: Ryzen 5 5600, RTX 3060
+  - type: input
+    id: model
+    attributes:
+      label: Whisper model
+      placeholder: ggml-small-q5_1

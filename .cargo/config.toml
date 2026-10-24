@@ -1,0 +1,4 @@
+[env]
+# ts-rs writes TypeScript bindings for `#[ts(export)]` types here when tests run.
+# `relative = true` resolves the path from the repository root (the parent of `.cargo/`).
+TS_RS_EXPORT_DIR = { value = "apps/desktop/src/bindings", relative = true }

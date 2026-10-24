@@ -1,0 +1,11 @@
+[package]
+name = "anotai-audio"
+description = "System audio capture, normalization and windowing for AnotAI."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]

@@ -106,8 +106,10 @@ anotai/
 │   ├── core/          # Domain types: sessions, segments, notes (no UI, no I/O)
 │   ├── audio/         # System audio capture, resampling, windowing
 │   ├── transcribe/    # TranscriptionEngine trait + whisper.cpp implementation
-│   └── notes/         # Note generation, prompt templates, AI provider clients
+│   ├── session/       # Session pipeline: capture → VAD → transcription → events
+│   └── storage/       # SQLite persistence and Markdown export
 ├── apps/
+│   ├── cli/           # `anotai` command-line interface, end to end without a UI
 │   ├── desktop/       # Tauri + React desktop app
 │   └── sync-server/   # Optional Axum sync server
 ├── bench/             # Transcription benchmarks (WER, latency, memory)

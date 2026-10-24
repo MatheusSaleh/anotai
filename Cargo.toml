@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core",
+    "crates/audio",
+    "crates/transcribe",
+    "crates/session",
+    "crates/storage",
+    "apps/cli",
+]
+
+[workspace.package]
+version = "0.0.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/MatheusSaleh/anotai"
+authors = ["Matheus Saleh"]
+publish = false
+
+# Shared versions for external crates. Crates opt in with `dep.workspace = true`.
+[workspace.dependencies]
